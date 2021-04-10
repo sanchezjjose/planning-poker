@@ -1,0 +1,28 @@
+.PollVotes-card {
+  display: inline-block;
+  background: var(--tertiary-background-color);
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 1rem;
+  overflow: scroll;
+  height: 12rem;
+  min-width: 8rem;
+  max-width: 10rem;
+  width: 20vw;
+}
+
+.PollVotes-card-point {
+  display: grid;
+  place-content: center;
+  color: var(--primary-text-color);
+  font-size: 3.5rem;
+  font-weight: 300;
+  height: 70%;
+}
+
+.PollVotes-card-name {
+  color: var(--tertiary-text-color);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+}

@@ -1,0 +1,21 @@
+.Landing {
+  display: grid;
+  text-align: center;
+  justify-items: center;
+}
+
+.Landing-sub-heading {
+  color: var(--primary-text-color);
+  font-size: 1.5rem;
+}
+
+.Landing-poll-link {
+  text-decoration: none;
+  margin: 1rem;
+}
+
+.Landing-polls-list a {
+  color: var(--primary-link-color);
+  font-size: 1.2rem;
+  text-decoration: none;
+}

@@ -1,0 +1,29 @@
+.Form {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+}
+
+.Form input, button {
+  -webkit-appearance: none;
+  border: 0.1rem solid var(--primary-border-color);
+  border-radius: 0;
+  outline: none;
+}
+
+.Form input {
+  background: var(--secondary-background-color);
+  color: var(--primary-text-color);
+  text-align: center;
+  min-width: 15rem;
+  max-width: 30rem;
+  width: 50vw;
+}
+
+.Form button {
+  background: var(--primary-button-color);
+  color: var(--secondary-text-color);
+  border-right: none;
+  font-weight: 400;
+  padding: 0.5rem;
+  width: 3.5rem;
+}
