@@ -6,8 +6,9 @@
 }
 
 .header {
-  display: grid;
+  display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
   background: var(--secondary-background-color);
   border-bottom: 0.1rem solid var(--primary-border-color);

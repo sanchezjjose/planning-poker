@@ -1,7 +1,5 @@
 .Landing {
-  display: grid;
   text-align: center;
-  justify-items: center;
 }
 
 .Landing-sub-heading {
