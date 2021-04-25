@@ -1,5 +1,4 @@
 const socketIO = require('socket.io');
-const Poll = require('./Poll');
 const Vote = require('./Vote')
 
 function initSocketIO(server, pollCache) {
@@ -8,9 +7,9 @@ function initSocketIO(server, pollCache) {
   io.on('connection', (socket) => {
     console.log('Client Connected');
 
-    socket.on('vote', (pollId, voterName, voteValue) => {
-      pollCache.addVote(pollId, new Vote(voterName, voteValue));
-      io.sockets.emit('poll-updated', pollCache.getPoll(pollId));
+    socket.on('vote', async (pollId, voterName, voteValue) => {
+      await pollCache.addVote(pollId, new Vote(voterName, voteValue));
+      io.sockets.emit('poll-updated', await pollCache.getPoll(pollId));
     });
 
     socket.on('disconnect', () => {

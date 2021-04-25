@@ -11,6 +11,8 @@ The server is running `express`, which is the API for the client.
 
 From the `planning-poker` root directory, run the following command to startup client and server:
 ```
+# Run this command also anytime dependencies change
+docker-compose build --no-cache
 docker-compose up
 ```
 
@@ -50,8 +52,7 @@ http://localhost:3001
 - HTTPS for local development
 - Add styled-components
 - Light / Dark Mode
-- Improved styles (ie, transitions / animations)
-- Reveal and Clear buttons to hide points then show, or clear votes
+- Improved styling (ie, transitions / animations)
 - Optimize for production (ie, Dockerfile to only install production deps or use NODE_ENV=production)
 - Delete Polls
 - Clear Votes
