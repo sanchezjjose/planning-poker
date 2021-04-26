@@ -3,7 +3,7 @@ The client and server for the planning poker web application.
 
 The client is single page web app using `React` and `TypeScript`.
 
-The server is running `express`, which is the API for the client.
+The server is running `express`, and serves as the API for the client. It is backed by `redis` (local development only), and will use an `in-memory` cache otherwise.
 
 ## Local Development
 
@@ -44,6 +44,15 @@ The server will be running on:
 http://localhost:3001
 ```
 
+## Deploy
+
+The client is deployed to Netlify on each commit.
+
+The server deploys to GCP with the following command (access required):
+
+```
+npm run deploy
+```
 
 ## Future Enhancements
 - Tests!
