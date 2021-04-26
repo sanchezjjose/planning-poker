@@ -1,12 +1,12 @@
 import React, { SyntheticEvent, useState } from 'react';
 
 import { createPollAPI } from '../api/routes';
-import { Poll, CreatePollProps } from '../types/types';
+import { Poll, PollCreateProps } from '../types/types';
 import Form from './Form';
 
-import './CreatePoll.css';
+import './PollCreate.css';
 
-function CreatePoll({ updatePolls }: CreatePollProps) {
+function PollCreate({ updatePolls }: PollCreateProps) {
   const [name, setName] = useState<string>('');
 
   function handleNameChange(e: SyntheticEvent) {
@@ -43,7 +43,7 @@ function CreatePoll({ updatePolls }: CreatePollProps) {
   }
 
   return (
-    <div className='CreatePoll'>
+    <div className='PollCreate'>
       <Form
         onSubmit={handleCreatePoll}
         onChange={handleNameChange}
@@ -54,4 +54,4 @@ function CreatePoll({ updatePolls }: CreatePollProps) {
   );
 }
 
-export default CreatePoll;
+export default PollCreate;

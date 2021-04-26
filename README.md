@@ -47,13 +47,14 @@ http://localhost:3001
 
 ## Future Enhancements
 - Tests!
-- Database to replace in-memory cache (Redis / MongoDB)
+- Redis to replace in-memory for deployed app
 - Development v. Production settings
 - HTTPS for local development
-- Add styled-components
-- Light / Dark Mode
+- Styled-Components
+- Light & Dark Mode
 - Improved styling (ie, transitions / animations)
 - Optimize for production (ie, Dockerfile to only install production deps or use NODE_ENV=production)
 - Delete Polls
 - Clear Votes
 - Reveal Votes (initially hidden with only persons name displayed)
+- Loader Icon

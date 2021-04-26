@@ -6,8 +6,8 @@ import { getPollAPI } from '../api/routes';
 import { endpoint } from '../util/config';
 import { Poll } from '../types/types';
 
-import PollJoinForm from './PollJoinForm';
-import PollVoteOptions from './PollVoteOptions';
+import PollJoin from './PollJoin';
+import PollVote from './PollVote';
 import PollVotes from './PollVotes';
 
 import './Poll.css';
@@ -59,9 +59,9 @@ function PollComponent() {
         {joined ?
           <div>
             <h1 className='Poll-greeting-header'>Welcome {voterName}!</h1>
-            <PollVoteOptions pollId={poll.id} voterName={voterName} socket={socket} />
+            <PollVote pollId={poll.id} voterName={voterName} socket={socket} />
           </div> :
-          <PollJoinForm setVoterName={setVoterName} setJoined={setJoined} />
+          <PollJoin setVoterName={setVoterName} setJoined={setJoined} />
         }
         <PollVotes votes={poll.votes} />
       </div>

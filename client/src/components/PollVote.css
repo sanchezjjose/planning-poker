@@ -1,8 +1,8 @@
-.PollVoteOptions {
+.PollVote {
   margin-bottom: 2rem;
 }
 
-.PollVoteOptions button {
+.PollVote button {
   background: var(--primary-button-color);
   color: var(--secondary-text-color);
   font-weight: 500;
@@ -13,6 +13,6 @@
   outline: none;
 }
 
-.PollVoteOptions button:hover {
+.PollVote button:hover {
   cursor: pointer;
 }

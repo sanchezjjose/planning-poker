@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { getPollsAPI } from '../api/routes';
 import { Poll } from '../types/types';
-import CreatePoll from './CreatePoll';
+import PollCreate from './PollCreate';
 
 import './Landing.css';
 
@@ -29,7 +29,7 @@ function Landing() {
       <header className='Landing-header header'>
         <h1>Planning Poker</h1>
       </header>
-      <CreatePoll updatePolls={setPolls} />
+      <PollCreate updatePolls={setPolls} />
       <h2 className='Landing-sub-heading'>Polls</h2>
       <div className='Landing-content'>
         <ul className='Landing-polls-list'>

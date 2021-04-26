@@ -28,6 +28,6 @@ export interface PollVotesProps {
   votes: Vote[]
 }
 
-export interface CreatePollProps {
+export interface PollCreateProps {
   updatePolls: (polls: Poll[]) => void
 }

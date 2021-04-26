@@ -2,7 +2,7 @@ import React, { SyntheticEvent, useState } from 'react';
 import { PollFormProps } from '../types/types';
 import Form from './Form';
 
-import './PollJoinForm.css';
+import './PollJoin.css';
 
 function PollJoinForm({ setVoterName, setJoined }: PollFormProps) {
   const [name, setName] = useState<string>('');
@@ -22,7 +22,7 @@ function PollJoinForm({ setVoterName, setJoined }: PollFormProps) {
   }
 
   return (
-    <div className='PollJoinForm'>
+    <div className='PollJoin'>
       <Form
         onSubmit={handleNameSubmit}
         onChange={handleNameChange}

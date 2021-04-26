@@ -1,6 +1,6 @@
 .Form {
-  display: inline-grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  justify-content: center;
 }
 
 .Form input, button {
@@ -25,5 +25,5 @@
   border-right: none;
   font-weight: 400;
   padding: 0.5rem;
-  width: 3.5rem;
+  width: 3rem;
 }

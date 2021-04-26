@@ -36,7 +36,7 @@
 }
 
 .Poll-sub-heading {
-  background: var(--secondary-background-color);
+  /* background: var(--secondary-background-color); */
   color: var(--primary-text-color);
   padding: 1rem;
   width: 100%;
@@ -53,5 +53,5 @@
 
 .Poll-greeting-header {
   margin-bottom: 1rem;
-  font-weight: 400;
+  font-weight: 300;
 }

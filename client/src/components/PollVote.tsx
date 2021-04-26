@@ -2,9 +2,9 @@ import React, { SyntheticEvent, useEffect, useState } from 'react';
 import { PollVoteOptionsProps } from '../types/types';
 import { points } from '../util/config';
 
-import './PollVoteOptions.css';
+import './PollVote.css';
 
-function PollVoteOptions({ pollId, voterName, socket }: PollVoteOptionsProps) {
+function PollVote({ pollId, voterName, socket }: PollVoteOptionsProps) {
   const [voteValue, setVoteValue] = useState<string>('');
 
   function submitVote(e: SyntheticEvent) {
@@ -19,7 +19,7 @@ function PollVoteOptions({ pollId, voterName, socket }: PollVoteOptionsProps) {
   }, [voterName, pollId, voteValue, socket]);
 
   return (
-    <div className='PollVoteOptions'>
+    <div className='PollVote'>
       {points.map(point =>
         <button key={point} onClick={submitVote} data-point={point}>{point}</button>
       )}
@@ -27,4 +27,4 @@ function PollVoteOptions({ pollId, voterName, socket }: PollVoteOptionsProps) {
   );
 }
 
-export default PollVoteOptions;
+export default PollVote;
