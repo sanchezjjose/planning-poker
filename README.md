@@ -52,7 +52,6 @@ http://localhost:3001
 - HTTPS for local development
 - Styled-Components
 - Light & Dark Mode
-- Improved styling (ie, transitions / animations)
 - Optimize for production (ie, Dockerfile to only install production deps or use NODE_ENV=production)
 - Delete Polls
 - Clear Votes
