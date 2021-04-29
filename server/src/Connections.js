@@ -7,6 +7,7 @@ function initSocketIO(server, pollCache) {
   io.on('connection', (socket) => {
     console.log('Client Connected');
 
+    // TODO: namespace
     socket.on('vote', async (pollId, voterName, voteValue) => {
       await pollCache.addVote(pollId, new Vote(voterName, voteValue));
       io.sockets.emit('poll-updated', await pollCache.getPoll(pollId));

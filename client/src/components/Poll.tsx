@@ -34,6 +34,7 @@ function PollComponent() {
         });
 
       } else {
+        // TODO: redirect with React Router
         window.location.href = '/';
       }
     }

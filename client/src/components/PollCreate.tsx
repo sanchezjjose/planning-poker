@@ -18,6 +18,7 @@ function PollCreate({ updatePolls }: PollCreateProps) {
     e.preventDefault();
 
     if (name) {
+      // TODO: generate id on the server
       const id = name.split(' ').join('-').toLowerCase();
       const response = await fetch(createPollAPI, {
         method: 'POST',
