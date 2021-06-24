@@ -66,3 +66,4 @@ npm run deploy
 - Clear Votes
 - Reveal Votes (initially hidden with only persons name displayed)
 - Loader Icon
+- Show celebration animation if all votes are the same

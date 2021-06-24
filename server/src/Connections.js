@@ -1,5 +1,6 @@
 const socketIO = require('socket.io');
-const Vote = require('./Vote')
+const Vote = require('./Vote');
+const Poll = require('./Poll');
 
 function initSocketIO(server, pollCache) {
   const io = socketIO(server);
@@ -10,6 +11,11 @@ function initSocketIO(server, pollCache) {
     // TODO: namespace
     socket.on('vote', async (pollId, voterName, voteValue) => {
       await pollCache.addVote(pollId, new Vote(voterName, voteValue));
+      io.sockets.emit('poll-updated', await pollCache.getPoll(pollId));
+    });
+
+    socket.on('votes-clear', async (pollId, pollName) => {
+      await pollCache.set(pollId, new Poll(pollId, pollName));
       io.sockets.emit('poll-updated', await pollCache.getPoll(pollId));
     });
 

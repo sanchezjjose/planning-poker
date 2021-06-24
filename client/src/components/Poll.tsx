@@ -6,6 +6,7 @@ import { getPollAPI } from '../api/routes';
 import { endpoint } from '../util/config';
 import { Poll } from '../types/types';
 
+import PollActions from './PollActions';
 import PollJoin from './PollJoin';
 import PollVote from './PollVote';
 import PollVotes from './PollVotes';
@@ -64,9 +65,10 @@ function PollComponent() {
           </div> :
           <PollJoin setVoterName={setVoterName} setJoined={setJoined} />
         }
+        <PollActions poll={poll} setPoll={setPoll} socket={socket} />
         <PollVotes votes={poll.votes} />
       </div>
-    </div >
+    </div>
   );
 }
 
