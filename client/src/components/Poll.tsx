@@ -20,6 +20,7 @@ function PollComponent() {
 
   const [voterName, setVoterName] = useState<string>('');
   const [joined, setJoined] = useState<boolean>(false);
+  const [reveal, setReveal] = useState<boolean>(false);
   const [poll, setPoll] = useState<Poll>({ id: pollId, name: '', votes: [] });
 
   useEffect(() => {
@@ -65,8 +66,8 @@ function PollComponent() {
           </div> :
           <PollJoin setVoterName={setVoterName} setJoined={setJoined} />
         }
-        <PollActions poll={poll} setPoll={setPoll} socket={socket} />
-        <PollVotes votes={poll.votes} />
+        <PollActions poll={poll} setPoll={setPoll} setReveal={setReveal} socket={socket} />
+        <PollVotes votes={poll.votes} reveal={reveal} />
       </div>
     </div>
   );

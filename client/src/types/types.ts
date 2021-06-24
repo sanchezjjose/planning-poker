@@ -25,12 +25,14 @@ export interface PollVoteOptionsProps {
 }
 
 export interface PollVotesProps {
-  votes: Vote[]
+  votes: Vote[],
+  reveal: boolean
 }
 
 export interface PollActionsProps {
   poll: Poll,
   setPoll: (poll: Poll) => void,
+  setReveal: (reveal: boolean) => void,
   socket: Socket
 }
 
