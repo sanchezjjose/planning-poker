@@ -19,6 +19,10 @@ function initSocketIO(server, pollCache) {
       io.sockets.emit('poll-updated', await pollCache.getPoll(pollId));
     });
 
+    socket.on('votes-reveal', () => {
+      io.sockets.emit('poll-reveal-votes', true);
+    });
+
     socket.on('disconnect', () => {
       console.log('Client Disconnected')
     });

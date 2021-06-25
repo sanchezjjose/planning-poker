@@ -35,6 +35,10 @@ function PollComponent() {
           setPoll(poll);
         });
 
+        socket.on('poll-reveal-votes', (revealVotes: boolean) => {
+            setReveal(revealVotes);
+        });
+
       } else {
         // TODO: redirect with React Router
         window.location.href = '/';

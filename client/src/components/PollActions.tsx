@@ -3,7 +3,7 @@ import { PollActionsProps } from '../types/types';
 
 import './PollActions.css';
 
-function PollActions({ poll, setPoll, setReveal, socket }: PollActionsProps) {
+function PollActions({ socket, poll, setPoll }: PollActionsProps) {
 
   function clearVotes() {
     const pollCopy = { ...poll, votes: [] };
@@ -12,7 +12,7 @@ function PollActions({ poll, setPoll, setReveal, socket }: PollActionsProps) {
   }
 
   function reveal() {
-    setReveal(true);
+    socket.emit('votes-reveal', true);
   }
 
   return (
