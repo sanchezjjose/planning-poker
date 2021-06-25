@@ -19,8 +19,8 @@ function PollActions({ socket, poll, setPoll }: PollActionsProps) {
     <div className='PollActions'>
         {poll.votes.length > 0 && (
             <>
-                <button onClick={clearVotes}>Clear</button>
-                <button onClick={reveal}>Reveal</button>
+                <button className='button-clear poll-actions-button' onClick={clearVotes}>Clear</button>
+                <button className='button-reveal poll-actions-button' onClick={reveal}>Reveal</button>
             </>
         )}
     </div>

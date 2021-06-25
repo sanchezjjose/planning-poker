@@ -1,3 +1,27 @@
-.PollActions {
+.PollActions .poll-actions-button {
+  border-radius: 2rem;
+  outline: none;
+  padding: 0.5rem;
+  margin: 1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  width: 8rem;
+}
 
+.PollActions .button-clear {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.PollActions .button-reveal {
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
+
+.PollActions .poll-actions-button:hover {
+  background: #000;
+  border: 1px solid #fff;
+  color: #fff;
 }
