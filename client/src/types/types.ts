@@ -39,3 +39,7 @@ export interface PollActionsProps {
 export interface PollCreateProps {
   updatePolls: (polls: Poll[]) => void
 }
+
+export interface CelebrationProps {
+    reveal: boolean
+}

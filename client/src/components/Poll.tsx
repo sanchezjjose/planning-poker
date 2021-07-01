@@ -10,6 +10,7 @@ import PollActions from './PollActions';
 import PollJoin from './PollJoin';
 import PollVote from './PollVote';
 import PollVotes from './PollVotes';
+import Celebration from './Celebration';
 
 import './Poll.css';
 
@@ -72,6 +73,7 @@ function PollComponent() {
         }
         <PollActions poll={poll} setPoll={setPoll} setReveal={setReveal} socket={socket} />
         <PollVotes votes={poll.votes} reveal={reveal} />
+        <Celebration reveal={reveal} />
       </div>
     </div>
   );
