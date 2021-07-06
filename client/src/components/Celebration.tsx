@@ -9,16 +9,20 @@ function Celebration ({ reveal }: CelebrationProps) {
   const [celebrate, setCelebrate] = useState<boolean>(false);
 
   useEffect(() => {
-    const voteValueElements: Element[] = Array.from(document.querySelectorAll('.PollVotes-card-point'));
-    const voteValues = voteValueElements.map(el => el.textContent);
-  
-    if (voteValues.length > 1) {
-      const shouldCelebrate = voteValues.every(val => val === voteValues[0]);
-      setCelebrate(shouldCelebrate);
+    function shouldCelebrate(votes: String[]) {
+      return votes.length > 1
+        && votes[0] !== '?'
+        && votes.every(vote => vote === votes[0]);
     }
+
+    const voteElements: Element[] = Array.from(document.querySelectorAll('.PollVotes-card-point'));
+    const votes: String[] = voteElements.map(el => el.textContent || '');
+    const celebrationTime = shouldCelebrate(votes);
+    setCelebrate(celebrationTime);
   
   }, [reveal]);
 
+  // TODO: cleanup / remove event listeners
   function listener(event: AnimationEvent<HTMLImageElement>) {
     switch(event.type) {
       case 'animationstart':
