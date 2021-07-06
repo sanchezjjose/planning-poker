@@ -20,6 +20,12 @@
   color: #000;
 }
 
+.PollActions .button-peek {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
 .PollActions .poll-actions-button:hover {
   background: #000;
   border: 1px solid #fff;
