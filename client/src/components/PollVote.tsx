@@ -16,7 +16,7 @@ function PollVote({ pollId, voterName, socket }: PollVoteOptionsProps) {
     if (pollId && voterName && voteValue) {
       socket.emit('vote', pollId, voterName, voteValue);
     }
-  }, [voterName, pollId, voteValue, socket]);
+  });
 
   return (
     <div className='PollVote'>
