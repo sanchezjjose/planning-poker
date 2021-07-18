@@ -3,7 +3,10 @@ const Vote = require('./Vote');
 const Poll = require('./Poll');
 
 function initSocketIO(server, pollCache) {
-  const io = socketIO(server);
+  const io = socketIO(server, { cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }});
 
   io.on('connection', (socket) => {
     console.log('Client Connected');
