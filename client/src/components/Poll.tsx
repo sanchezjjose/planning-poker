@@ -14,7 +14,7 @@ import Celebration from './Celebration';
 
 import './Poll.css';
 
-const socket = io(endpoint, { secure: true, transports: ['websocket'] });
+const socket = io(endpoint, { secure: true });
 
 function PollComponent() {
   const pollId = window.location.pathname.split('/')[1];
