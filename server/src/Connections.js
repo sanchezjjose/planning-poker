@@ -19,7 +19,7 @@ function initSocketIO(server, pollCache) {
 
     socket.on('votes-clear', async (pollId, pollName) => {
       await pollCache.set(pollId, new Poll(pollId, pollName));
-      io.sockets.emit('poll-updated', await pollCache.getPoll(pollId));
+      io.sockets.emit('poll-cleared', await pollCache.getPoll(pollId));
     });
 
     socket.on('votes-reveal', (shouldReveal) => {

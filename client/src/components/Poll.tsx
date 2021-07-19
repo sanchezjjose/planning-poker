@@ -20,6 +20,7 @@ function PollComponent() {
   const pollId = window.location.pathname.split('/')[1];
 
   const [voterName, setVoterName] = useState<string>('');
+  const [voteValue, setVoteValue] = useState<string>('');
   const [joined, setJoined] = useState<boolean>(false);
   const [reveal, setReveal] = useState<boolean>(false);
   const [poll, setPoll] = useState<Poll>({ id: pollId, name: '', votes: [] });
@@ -37,7 +38,12 @@ function PollComponent() {
         });
 
         socket.on('poll-reveal-votes', (revealVotes: boolean) => {
-            setReveal(revealVotes);
+          setReveal(revealVotes);
+        });
+
+        socket.on('poll-cleared', (poll: Poll) => {
+          setVoteValue('');
+          setPoll(poll);
         });
 
       } else {
@@ -50,6 +56,8 @@ function PollComponent() {
 
     return () => {
       socket.off('poll-updated');
+      socket.off('poll-reveal-votes');
+      socket.off('poll-cleared');
     };
 
   }, [pollId]);
@@ -65,11 +73,15 @@ function PollComponent() {
       </header>
       <div className='Poll-content'>
         {joined ?
-          <div>
-            <h1 className='Poll-greeting-header'>Welcome {voterName}!</h1>
-            <PollVote pollId={poll.id} voterName={voterName} socket={socket} />
-          </div> :
-          <PollJoin setVoterName={setVoterName} setJoined={setJoined} />
+          <PollVote
+            pollId={poll.id}
+            voterName={voterName}
+            voteValue={voteValue}
+            setVoteValue={setVoteValue}
+            socket={socket} /> :
+          <PollJoin
+              setVoterName={setVoterName}
+              setJoined={setJoined} />
         }
         <PollActions poll={poll} setPoll={setPoll} setReveal={setReveal} socket={socket} />
         <PollVotes votes={poll.votes} reveal={reveal} />

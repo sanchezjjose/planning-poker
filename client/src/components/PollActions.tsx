@@ -18,7 +18,7 @@ function PollActions({ socket, poll, setPoll }: PollActionsProps) {
     }, 100);
   }
 
-  function reveal() {
+  function revealVotes() {
     socket.emit('votes-reveal', true);
   }
 
@@ -28,7 +28,7 @@ function PollActions({ socket, poll, setPoll }: PollActionsProps) {
             <>
                 <button className='button-peek poll-actions-button' onClick={peekVotes}>Peek</button>
                 <button className='button-clear poll-actions-button' onClick={clearVotes}>Clear</button>
-                <button className='button-reveal poll-actions-button' onClick={reveal}>Reveal</button>
+                <button className='button-reveal poll-actions-button' onClick={revealVotes}>Reveal</button>
             </>
         )}
     </div>

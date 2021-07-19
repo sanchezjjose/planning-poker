@@ -18,9 +18,10 @@ export interface PollFormProps {
 }
 
 export interface PollVoteOptionsProps {
-  // setPoint: (point: string) => void
-  voterName: string,
   pollId: string,
+  voterName: string,
+  voteValue: string,
+  setVoteValue: (vote: string) => void
   socket: Socket
 }
 
