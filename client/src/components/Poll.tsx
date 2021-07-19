@@ -42,7 +42,9 @@ function PollComponent() {
         });
 
         socket.on('poll-cleared', (poll: Poll) => {
+          // TODO: Look into atomic updates with React 18
           setVoteValue('');
+          setReveal(false);
           setPoll(poll);
         });
 
