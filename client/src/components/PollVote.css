@@ -5,12 +5,14 @@
 .PollVote button {
   background: var(--primary-button-color);
   color: var(--secondary-text-color);
-  font-weight: 500;
-  width: 3rem;
-  height: 3rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  width: 4rem;
+  height: 4rem;
   margin: 0.5rem;
   border: none;
   outline: none;
+  border-radius: 2rem;
 }
 
 .PollVote button:hover {

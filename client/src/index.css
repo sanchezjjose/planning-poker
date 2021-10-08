@@ -31,13 +31,14 @@ code {
 :root[data-theme-mode=dark] {
   --primary-background-color: rgb(36,35,34);
   --primary-border-color: rgb(80, 80, 80);
-  --primary-button-color: #ffc864;
+  --primary-button-color: #c292fc;
   --primary-link-color: #9e9e9e;
   --primary-text-color: #fff;
   --secondary-background-color: rgba(50,48,48);
   --secondary-button-color: #61605d;
-  --secondary-link-color: #c3f0c8;
-  --secondary-text-color: rgba(50,48,48);
+  --secondary-link-color: #c292fc;
+  --secondary-text-color: #000;
   --tertiary-text-color: rgba(25,20,20,0.3);
-  --tertiary-background-color: #c3f0c8;
+  --tertiary-background-color: #d19260;
+  --tertiary-text-color: #c292fc;
 }

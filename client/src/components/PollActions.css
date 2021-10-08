@@ -8,6 +8,10 @@
   width: 8rem;
 }
 
+.PollActions .poll-actions-button:hover {
+  cursor: pointer;
+}
+
 .PollActions .button-clear {
   background: transparent;
   border: 1px solid #fff;

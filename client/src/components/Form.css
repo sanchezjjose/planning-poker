@@ -24,6 +24,10 @@
   color: var(--secondary-text-color);
   border-right: none;
   font-weight: 400;
-  padding: 0.5rem;
-  width: 3rem;
+  padding: 0.8rem;
+  width: 4rem;
+}
+
+.Form button:hover {
+  cursor: pointer;
 }

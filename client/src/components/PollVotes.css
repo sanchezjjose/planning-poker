@@ -1,22 +1,40 @@
+.PollVotes-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
 .PollVotes-card {
-  display: inline-block;
-  background: var(--tertiary-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--secondary-background-color);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: margin 0.2s ease-in-out;
   animation: slide-up 0.4s ease;
   border-radius: 0.5rem;
   margin: 1rem;
-  padding: 1rem;
-  overflow: scroll;
+  padding: 0.5rem;
+  overflow: hidden;
   height: 12rem;
   min-width: 8rem;
   max-width: 10rem;
   width: 20vw;
 }
 
+.PollVotes-card:hover {
+  margin-top: -1px;
+}
+
 .PollVotes-card-point {
-  color: var(--secondary-text-color);
-  font-size: 3.5rem;
+  color: var(--primary-text-color);
+  font-size: 2.5rem;
   font-weight: 300;
-  height: 70%;
+  /* height: 70%; */
+  padding: 0;
+    margin: 0;
+    display: inline;
 }
 
 .PollVotes-card-name {
