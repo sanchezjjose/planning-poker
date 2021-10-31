@@ -82,8 +82,8 @@ function PollComponent() {
             setVoteValue={setVoteValue}
             socket={socket} /> :
           <PollJoin
-              setVoterName={setVoterName}
-              setJoined={setJoined} />
+            setVoterName={setVoterName}
+            setJoined={setJoined} />
         }
         <PollActions poll={poll} setPoll={setPoll} setReveal={setReveal} socket={socket} />
         <PollVotes votes={poll.votes} reveal={reveal} />

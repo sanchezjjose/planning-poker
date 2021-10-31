@@ -3,7 +3,7 @@ import { PollActionsProps } from '../types/types';
 
 import './PollActions.css';
 
-function PollActions({ socket, poll, setPoll }: PollActionsProps) {
+function PollActions({ socket, poll, setPoll, setReveal }: PollActionsProps) {
 
   function clearVotes() {
     const pollCopy = { ...poll, votes: [] };
@@ -12,10 +12,8 @@ function PollActions({ socket, poll, setPoll }: PollActionsProps) {
   }
 
   function peekVotes() {
-    socket.emit('votes-reveal', true);
-    setTimeout(() => {
-        socket.emit('votes-reveal', false);
-    }, 100);
+    setReveal(true)
+    setTimeout(() => { setReveal(false) }, 100);
   }
 
   function revealVotes() {
@@ -24,13 +22,13 @@ function PollActions({ socket, poll, setPoll }: PollActionsProps) {
 
   return (
     <div className='PollActions'>
-        {poll.votes.length > 0 && (
-            <>
-                <button className='button-peek poll-actions-button' onClick={peekVotes}>Peek</button>
-                <button className='button-clear poll-actions-button' onClick={clearVotes}>Clear</button>
-                <button className='button-reveal poll-actions-button' onClick={revealVotes}>Reveal</button>
-            </>
-        )}
+      {poll.votes.length > 0 && (
+        <>
+          <button className='button-peek poll-actions-button' onClick={peekVotes}>Peek</button>
+          <button className='button-clear poll-actions-button' onClick={clearVotes}>Clear</button>
+          <button className='button-reveal poll-actions-button' onClick={revealVotes}>Reveal</button>
+        </>
+      )}
     </div>
   );
 }

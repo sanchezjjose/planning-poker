@@ -42,5 +42,5 @@ export interface PollCreateProps {
 }
 
 export interface CelebrationProps {
-    reveal: boolean
+  reveal: boolean
 }
